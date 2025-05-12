@@ -1,7 +1,12 @@
 ﻿// Screen Sound
 
 string mensagemDeBoaVinda = "Bem-vindo ao Screen Sound";
-List<string> listaDasBandas = new List<string> { "U2", "The Beatles", "Calypso" };
+//List<string> listaDasBandas = new List<string> { "U2", "The Beatles", "Calypso" };
+
+Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();
+bandasRegistradas.Add("U2", new List<int> {5, 9, 4});
+bandasRegistradas.Add("The Beatles", new List<int> { 10, 8, 9 });
+bandasRegistradas.Add("Calypso", new List<int> { 7, 6, 8 });
 
 void ExibirLogo()
 {
@@ -38,7 +43,7 @@ void ExibirOpcoesDoMenu()
             MostrarBandas();
             break;
         case 3:
-            Console.WriteLine("Você digitou a opção " + opcao);
+            AvaliarUmaBanda();
             break;
         case 4:
             Console.WriteLine("Você digitou a opção " + opcao);
@@ -59,7 +64,9 @@ void RegistrarBanda()
     Console.WriteLine("\nRegistrar Banda");
     Console.Write("\nDigite o nome da banda: ");
     string nomeBanda = Console.ReadLine();
-    listaDasBandas.Add(nomeBanda);
+
+    bandasRegistradas.Add(nomeBanda, new List<int>());
+
     Console.WriteLine($"Banda {nomeBanda} registrada com sucesso!");
     Thread.Sleep(2000);
     Console.Clear();
@@ -70,7 +77,7 @@ void MostrarBandas()
 {
     Console.Clear();
     Console.WriteLine("\nBandas Registradas:");
-    foreach (var banda in listaDasBandas)
+    foreach (var banda in bandasRegistradas.Keys)
     {
         Console.WriteLine($"- {banda}");
     }
@@ -79,6 +86,32 @@ void MostrarBandas()
     Thread.Sleep(2000);
     Console.Clear();
     ExibirOpcoesDoMenu();
+}
+
+void AvaliarUmaBanda()
+{
+    Console.Clear();
+    Console.WriteLine("\nAvaliar Banda");
+    Console.Write("\nDigite o nome da banda que deseja avaliar: ");
+    string nomeBanda = Console.ReadLine()!;
+    if (bandasRegistradas.ContainsKey(nomeBanda))
+    {
+        Console.Write("\nDigite a nota (0 a 10): ");
+        int nota = int.Parse(Console.ReadLine()!);
+        bandasRegistradas[nomeBanda].Add(nota);
+        Console.WriteLine($"A nota de {nota} registrada para a banda {nomeBanda}.");
+        Thread.Sleep(2000);
+        Console.Clear();
+        ExibirOpcoesDoMenu();
+    }
+    else
+    {
+        Console.WriteLine($"A banda {nomeBanda} não está registrada.");
+        Console.WriteLine("Digte uma tecla para voltar ao menu princiapl");
+        Console.ReadKey();
+        Console.Clear();
+        ExibirOpcoesDoMenu();
+    }
 }
 
 ExibirOpcoesDoMenu();
