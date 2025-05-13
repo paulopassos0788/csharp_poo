@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenSound", "ScreenSound\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercicio01", "Exercicio01\Exercicio01.csproj", "{AC05018C-903A-4A3B-96F9-CC638BCBB08D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercicio02", "Exercicio02\Exercicio02.csproj", "{F348FBDA-98BB-4A57-A2F4-171F50F50774}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AC05018C-903A-4A3B-96F9-CC638BCBB08D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC05018C-903A-4A3B-96F9-CC638BCBB08D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC05018C-903A-4A3B-96F9-CC638BCBB08D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F348FBDA-98BB-4A57-A2F4-171F50F50774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F348FBDA-98BB-4A57-A2F4-171F50F50774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F348FBDA-98BB-4A57-A2F4-171F50F50774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F348FBDA-98BB-4A57-A2F4-171F50F50774}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
