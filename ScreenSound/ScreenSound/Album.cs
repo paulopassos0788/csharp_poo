@@ -2,9 +2,14 @@
 {
     public class Album
     {
-        public string Name { get; set; }
+        public string Nome { get; }
         public int DuracaoTotal => musicas.Sum(m => m.Duracao);
         private List<Musica> musicas = new List<Musica>();
+        
+        public Album(string nome)
+        {
+            this.Nome = nome;
+        }
 
         public void AdicionarMusica(Musica musica)
         {
@@ -13,7 +18,7 @@
 
         public void ExibirDetalhes()
         {
-            Console.WriteLine($"\nLista de musicas do Album: {Name}");
+            Console.WriteLine($"\nLista de musicas do Album: {Nome}");
             Console.WriteLine($"\nDuração total: {DuracaoTotal} segundos");
             Console.WriteLine("\nMúsicas:");
             foreach (var musica in musicas)

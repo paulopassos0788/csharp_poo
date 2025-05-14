@@ -1,48 +1,46 @@
 ﻿using ScreenSound;
 
-Album album = new Album();
-album.Name = "Nevermind";
+Podcast podcast1 = new Podcast("Podcast 1", "Host 1");
 
-Genero genero1 = new Genero();
-genero1.Nome = "Grunge";
+Episodio episodio1 = new Episodio("Episódio 1", "Resumo do episódio 1", 1, 30);
+Episodio episodio2 = new Episodio("Episódio 2", "Resumo do episódio 2", 2, 45);
+episodio1.AdicionarConvidado(new Convidado("Convidado 1"));
+episodio1.AdicionarConvidado(new Convidado("Convidado 2"));
+episodio2.AdicionarConvidado(new Convidado("Convidado 3"));
+episodio2.AdicionarConvidado(new Convidado("Convidado 4"));
 
-Musica musica2= new Musica();
-musica2.Nome = "Smells Like Teen Spirit";
-musica2.Artista = "Nirvana";
-musica2.Duracao = 301;
-musica2.Disponivel = true;
+podcast1.AdicionarEpisodio(episodio1);
+podcast1.AdicionarEpisodio(episodio2);
+podcast1.ExibirPodcast();
 
-Musica musica4 = new Musica();
-musica4.Nome = "Come As You Are";
-musica4.Artista = "Nirvana";
-musica4.Duracao = 219;
-musica4.Disponivel = true;
 
-Musica musica5 = new Musica();
-musica5.Nome = "Lithium";
-musica5.Artista = "Nirvana";
-musica5.Duracao = 257;
-musica5.Disponivel = true;
+/*
+Banda banda1 = new Banda("Banda 1");
 
-Musica musica6 = new Musica();
-musica6.Nome = "In Bloom";
-musica6.Artista = "Nirvana";
-musica6.Duracao = 254;
-musica6.Disponivel = true;
+Album album1 = new Album("Album 1");
 
-musica2.ExibirDetalhes();
-musica4.ExibirDetalhes();
-musica5.ExibirDetalhes();
-musica6.ExibirDetalhes();
+Musica musica1 = new Musica(banda1, "Musica 1")
+{
+    Duracao = 180,
+    Disponivel = true
+};
 
-album.AdicionarMusica(musica2);
-album.AdicionarMusica(musica4);
-album.AdicionarMusica(musica5);
-album.AdicionarMusica(musica6);
+Musica musica2 = new Musica(banda1, "Musica 2")
+{
+    Duracao = 240,
+    Disponivel = false
+};
 
-album.ExibirDetalhes();
-genero1.AdicionarMusica(musica2);
-genero1.AdicionarMusica(musica4);
-genero1.AdicionarMusica(musica5);
-genero1.ExibirDetalhes();
+Musica musica3 = new Musica(banda1, "Musica 3")
+{
+    Duracao = 300,
+    Disponivel = true
+};
 
+banda1.ExibirDiscografia();
+
+album1.AdicionarMusica(musica1);
+album1.AdicionarMusica(musica2);
+album1.AdicionarMusica(musica3);
+album1.ExibirDetalhes();
+*/
